@@ -1,0 +1,54 @@
+{
+    "name": "messerli90/user-credits",
+    "description": "Manage in-app currency",
+    "keywords": [
+        "messerli90",
+        "user-credits"
+    ],
+    "homepage": "https://github.com/messerli90/user-credits",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Michael Messerli",
+            "email": "michaelamesserli@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/support": "^7.0",
+        "laravel/framework": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Messerli90\\UserCredit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Messerli90\\UserCredit\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Messerli90\\UserCredits\\UserCreditsServiceProvider"
+            ],
+            "aliases": {
+                "UserCredits": "Messerli90\\UserCredits\\UserCreditsFacade"
+            }
+        }
+    }
+}
