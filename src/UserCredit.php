@@ -40,4 +40,12 @@ class UserCredit extends Model
     {
         return !$this->isUsed() && !$this->isExpired();
     }
+
+    public static function forUser($user)
+    {
+        $pending_credit = new PendingCredit;
+        $pending_credit->user = $user;
+
+        return $pending_credit;
+    }
 }
