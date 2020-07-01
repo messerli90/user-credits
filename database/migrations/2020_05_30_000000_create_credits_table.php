@@ -18,6 +18,7 @@ class CreateCreditsTable extends Migration
             $table->integer('user_id');
             $table->integer('value')->default(1);
             $table->string('memo')->nullable();
+            $table->timestamp('used_at')->nullable();
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
         });

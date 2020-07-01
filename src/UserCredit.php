@@ -17,4 +17,27 @@ class UserCredit extends Model
             'value' => $value
         ]);
     }
+
+    public function use($memo = '')
+    {
+        $this->update([
+            'used_at' => now(),
+            'memo' => $memo
+        ]);
+    }
+
+    public function isUsed()
+    {
+        return !!$this->used_at;
+    }
+
+    public function isExpired()
+    {
+        return $this->expires_at && $this->expires_at->lt(now());
+    }
+
+    public function isAvailable()
+    {
+        return !$this->isUsed() && !$this->isExpired();
+    }
 }

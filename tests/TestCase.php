@@ -9,9 +9,7 @@ use Messerli90\UserCredit\UserCreditServiceProvider;
 
 class TestCase extends TestbenchTestCase
 {
-    // use RefreshDatabase;
-
-    // use DatabaseMigrations;
+    use RefreshDatabase;
 
     public function setUp(): void
     {
